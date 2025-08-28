@@ -1,0 +1,36 @@
+### 🛠 Steps to Fix
+
+#### 1. **Install Python 3.9** (if not already installed)
+
+On Ubuntu:
+
+```bash
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+sudo apt install python3.9 python3.9-venv python3.9-dev
+```
+
+#### 2. **Create a new virtual environment using Python 3.9**
+
+```bash
+cd ~/Desktop/face_detection
+python3.9 -m venv venv39
+source venv39/bin/activate
+```
+
+You should now see `(venv39)` in your prompt.
+
+#### 3. **Reinstall the packages**
+
+```bash
+pip install --upgrade pip
+pip install dlib
+pip install git+https://github.com/ageitgey/face_recognition_models
+pip install face_recognition
+```
+
+#### 4. **Try running your script again**
+
+```bash
+face_recognition known/elon.jpeg unknown/download.jpeg
+```
