@@ -1,4 +1,4 @@
-### 🛠 Steps to Fix
+### 🛠 Steps
 
 #### 1. **Install Python 3.9** (if not already installed)
 
@@ -29,8 +29,37 @@ pip install git+https://github.com/ageitgey/face_recognition_models
 pip install face_recognition
 ```
 
+sudo apt-get install python3-tk
+
 #### 4. **Try running your script again**
 
 ```bash
 face_recognition known/elon.jpeg unknown/download.jpeg
 ```
+
+
+---
+
+### 🔍 What’s going wrong?
+
+Your virtual environment was likely created using a Python binary **that doesn’t have access to `tkinter`**, even though it’s installed system-wide.
+
+This can happen if:
+
+* You created the venv using a custom Python version.
+* The venv was created before installing `python3-tk`.
+
+---
+
+### 🛠️ Fix Options
+
+#### ✅ Option 1: Recreate the virtual environment using the system Python (now with tkinter)
+
+Run these commands:
+
+```bash
+# First, deactivate and remove old venv
+deactivate
+rm -rf venv39
+
+23 minutes
